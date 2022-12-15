@@ -1,0 +1,104 @@
+<main>
+    <div class="centrado">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title d-flex justify-content-center"> Formulario de registro</h5>
+                    <div class="row">
+                        <div class="col-12">
+                            <form [formGroup]="registerForm" class="row g-3" (ngSubmit)="onSubmit()">
+                                <h5 class="card-title">Información Personal</h5>
+                                <div class="col-6">
+                                    <label class="form-label" for="dni">Documento de Identidad</label>
+                                    <input [formControl]="dniControl" class="form-control" type="text" placeholder="72795024" />
+                                    <app-helper-error [control]="dniControl"></app-helper-error>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label" for="nombres">Nombres</label>
+                                    <input [formControl]="nombresControl" class="form-control" type="text" placeholder="donatelo estaban" />
+                                    <app-helper-error [control]="nombresControl"></app-helper-error>
+                                </div> 
+                                <div class="col-6">
+                                    <label class="form-label" for="apellidoPaterno">Apellido Paterno</label>
+                                    <input [formControl]="apellidoPaternoControl" class="form-control" type="text" placeholder="perez" />
+                                    <app-helper-error [control]="apellidoPaternoControl"></app-helper-error>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label" for="apellidoMaterno">Apellido Materno</label>
+                                    <input [formControl]="apellidosMaternoControl" class="form-control" type="text" placeholder="rojas" />
+                                    <app-helper-error [control]="apellidosMaternoControl"></app-helper-error>
+                                </div>
+                              
+                                <div class="col-6">
+                                <label class="form-label" for="sexo">Sexo</label>
+                                <select [formControl]="sexoControl" class="form-select">
+                                <option value=""> Seleccione una opcion</option>
+                                <option value="'1'">Femenino</option>
+                                <option value="'2'">Masculino</option>
+                                <option value="'3'">No definido</option>
+                                </select>
+                                </div>
+
+                                <div class="col-6">
+                                    <label class="form-label" for="celular">Celular</label>
+                                    <input [formControl]="celularControl" class="form-control" type="text" placeholder="987654123" />
+                                    <app-helper-error [control]="celularControl"></app-helper-error>
+                                </div>
+
+                                <h5 class="card-title"> Informacion Complementaria</h5>
+                                  <div class="col-8">
+                                    <label class="form-label" for="streetName">Calle</label>
+                                    <input [formControl]="streetNameControl" class="form-control" type="text" />
+                                    <app-helper-error [control]="streetNameControl"></app-helper-error>
+                                  </div>
+
+                                  <div class="col-4">
+                                    <label class="form-label" for="streetNumber">Nro</label>
+                                    <input [formControl]="streetNumberControl" class="form-control" type="text" />
+                                    <app-helper-error [control]="streetNameControl"></app-helper-error>
+                                  </div>
+
+                                  <div class="col-12">
+                                    <select [formControl]="countryControl" class="form-select">
+                                      <option value="">Selecciona un pais</option>
+                                      <option value="'ar'">Argentina</option>
+                                      <option value="mx">Mexico</option>
+                                    </select>
+                                  </div>
+
+                                <div class="col-6">
+                                    <label class="form-label" for="email">E-mail</label>
+                                    <input [formControl]="emailControl" class="form-control" type="email" placeholder="example@gmail.com" />
+                                     <app-helper-error [control]="emailControl"></app-helper-error>
+                                </div>
+
+                                <div class="col-6">
+                                    <label class="form-label" for="reemail">repetir E-mail</label>
+                                    <input [formControl]="reemailControl" class="form-control" type="email" placeholder="example@gmail.com" />
+                                    <app-helper-error [control]="reemailControl"></app-helper-error>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label" for="password">Password</label>
+                                    <input [formControl]="passwordControl" class="form-control" type="password" />
+                                    <app-helper-error [control]="passwordControl"></app-helper-error>
+                                  </div>
+                                  <div class="col-6">
+                                    <label class="form-label" for="repeatPassword">Repita password</label>
+                                    <input [formControl]="repeatPasswordControl" class="form-control" type="password" />
+                                    <app-helper-error [control]="repeatPasswordControl"></app-helper-error>
+                                  </div>
+                                <div class="col-12 d-flex justify-content-center">
+                                    <button [disabled]="registerForm.invalid" type="submit" class="btn btn-primary">Enviar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
